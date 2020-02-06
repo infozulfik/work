@@ -2,6 +2,14 @@ span {
     font-weight: bold;
 }
 
+.text-left {
+    float: left;
+}
+
 .text-right {
     float: right;
+}
+
+.text-centre {
+    text-align: center;
 }
