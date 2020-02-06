@@ -1,0 +1,12 @@
+<p-tabView>
+    <p-tabPanel header="Search">
+       
+        <p-dropdown [options]="searchType" [(ngModel)]="selectedType"></p-dropdown>
+        <br/>
+        <br/>   
+        <input type="text" placeholder="Account Number" pInputText />
+        <br/>
+        <br/> 
+        <p-button label="Search" styleClass="ui-button-danger"></p-button>
+    </p-tabPanel>
+</p-tabView>

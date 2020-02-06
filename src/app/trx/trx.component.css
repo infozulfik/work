@@ -1,0 +1,30 @@
+.purplef {
+    color: rgb(236, 11, 236);
+}
+
+label {
+    font-weight: bold;
+}
+
+table {
+    background-color: white;
+}
+
+td, th {
+    font-size: 13px;
+    padding: 5px;
+}
+
+label, select, input, p, span, button {
+    font-size: 13px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-group-text {
+    background-color: white;
+    border: none;
+ }

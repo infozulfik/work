@@ -1,0 +1,251 @@
+<!--Navbar-->
+<app-navbar></app-navbar>
+<!--/.Navbar-->
+
+<section class="container-fluid"  style="background-color: #f3e5f5;">
+  
+  <div class="row" style="background-color: rgb(247, 245, 247); margin: 3px 3px;">
+      <div class="col-sm-12" style="padding: 10px 20px;">
+          <p style="margin: 0px 0px;"> <button type="button" class="btn btn-outline-secondary waves-effect">cancel</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Setup attribute of the <span class="purplef">EMEA</span> portfolio <span class="purplef">A094</span> opened on <span class="purplef">03/03/2019</span> &nbsp; &nbsp; ( 7/151136/003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value </p>
+      </div>
+  </div>
+
+  <div class="row" style="margin: 6px 3px;">
+      <!-- General setion -->
+      <div class="col-sm-3" style="padding-right: 50px;">
+          <p class="purplef">General</p>
+          <form>
+              <div class="form-group">
+                <label for="portfolioCurrency">Portfolio Currency &nbsp; <sup class="text-danger">*</sup></label>
+                <select name="portfolioCurrency" class="form-control" id="portfolioCurrency">
+                  <option>EUR - Euro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="manager">Manager &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="manager" class="form-control" id="manager">
+                    <option>Seiwyn Pereira(Sp77972)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="legalVehicle">Legal Vehicle &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="legalVehicle" class="form-control" id="legalVehicle">
+                    <option>599-Lumberg</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="bankerName">Banker Name</label>
+                  <input type="text" name="bankerName" class="form-control" id="bankerName">
+                </div>
+                <div class="form-group">
+                  <label for="bankerRegion">Banker Region</label>
+                  <select name="bankerRegion" class="form-control" id="bankerRegion">
+                    <option></option>
+                  </select>
+                </div>
+            </form>
+      </div>
+      <!-- Classification section -->
+      <div class="col-sm-2">
+          <p class="purplef">Classification</p>
+          <form>
+              <div class="form-group">
+                <label for="portfolioType">Portfolio Type &nbsp; <sup class="text-danger">*</sup></label>
+                <select name="portfolioType" class="form-control" id="portfolioType">
+                  <option>IM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="tradingModel">Trading Model &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="tradingModel" class="form-control" id="tradingModel">
+                    <option>Trading</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="investmentLevel">Investment Level</label>
+                  <select name="investmentLevel" class="form-control" id="investmentLevel">
+                    <option></option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="relationType">Relation Type</label>
+                  <select name="relationType" class="form-control" id="relationType">
+                    <option></option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="cimName">CIM Name &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="cimName" class="form-control" id="cimName">
+                    <option>GDP-BAL</option>
+                  </select>
+                </div>
+            </form>
+      </div>
+      <!-- Tax section -->
+      <div class="col-sm-2">
+          <p class="purplef">Tax</p>
+          <form>
+              <div class="form-group">
+                <label for="permanentResidence">Permanent Residence &nbsp; <sup class="text-danger">*</sup></label>
+                <select name="permanentResidence" class="form-control" id="permanentResidence">
+                  <option>NL-Netherland</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom: 104px;">
+              <label for="vknon-domicle">VK Non-Domicle</label>
+                  <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="vknon-domicle" value="VK Non-Domicle" aria-label="...">
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                  <label for="clientType">Client Type &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="clientType" class="form-control" id="clientType">
+                      <option>CPB-Private Bank</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="investmentObj">Investment Objective &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="investmentObj" class="form-control" id="investmentObj">
+                      <option>GDB</option>
+                  </select>
+              </div>
+            </form>
+      </div>
+      <!-- Trading section  -->
+      <div class="col-sm-2">
+          <p class="purplef">Trading</p>
+          <form>
+              <div class="form-group">
+                <label for="cashRule">Cash Rule &nbsp; <sup class="text-danger">*</sup></label>
+                <select name="cashRule" class="form-control" id="cashRule">
+                  <option>All Cash</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="cashType">Cash Type</label>
+                  <select name="cashType" class="form-control" id="cashType">
+                      <option></option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="division">Division</label>
+                  <select name="division" class="form-control" id="division">
+                      <option></option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="alertId">Alert ID &nbsp; <sup class="text-danger">*</sup></label>
+                  <select name="alertId" class="form-control" id="alertId">
+                      <option>L599</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="egNumber">EG Number</label>
+                  <input type="text" name="egNumber" class="form-control" id="egNumber">
+              </div>
+            </form>
+      </div>
+  </div>
+
+  <div class="row" style="margin: 6px 3px;">
+      <div class="col-sm-9">
+          <h6>&nbsp; Sleeves</h6>
+          <table class="table table-bordered table-hover">
+              <thead class="table-active">
+                <tr>
+                  <th>Strategy</th>
+                  <th style="width: 50px;">Default</th>
+                  <th>Can Buy</th>
+                  <th>Can Sell</th>
+                  <th>Benchmark</th>
+                  <th>Model</th>
+                  <th>Manager</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>BMA</td>
+                  <td>
+                      <div class="input-group-text">
+                          <input type="radio">
+                      </div>
+                  </td>
+                  <td>No(Yes)</td>
+                  <td>No(Yes)</td>
+                  <td></td>
+                  <td>AA_24-GOP Balanced EUR</td>
+                  <td>SP77972</td>
+                  <td>
+                      <div class="input-group-text">
+                          <input type="checkbox">
+                      </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
+
+  <br>
+
+  <div class="row" style="margin: 6px 3px;">
+      <div class="col-sm-9">
+
+          <div class="row">
+              <div class="col-sm-2">
+                  <button class="btn btn-light btn-outline-secondary">Edit Cash Accounts</button>
+              </div>
+              <div class="col-sm-1">
+
+              </div>
+              <div class="col-sm-1">
+                  <span style="font-weight: bold;font-size: 14px;color: rgb(236, 11, 236);">Certification</span>
+              </div>
+              <div class="col-sm-2">
+                  <form>
+                      <div class="form-group">
+                        <select name="certification" class="form-control" id="certification">
+                          <option>Shell</option>
+                        </select>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-sm-1">
+
+              </div>
+              <div class="col-sm-2">
+                  <p><span style="font-weight: bold;font-size: 14px;color: rgb(236, 11, 236);">Control Date:</span>&nbsp;N/A</p>
+              </div>
+              <div class="col-sm-1">
+                  <button class="btn btn-outline-secondary btn-light dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Save</button>
+              </div>
+              <div class="col-sm-2">
+                  <button class="btn" style="border: 0.5px solid black;background-color:purple;color:white;">Save & Return</button>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</section>

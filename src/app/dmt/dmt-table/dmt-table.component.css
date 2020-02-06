@@ -1,0 +1,15 @@
+.dataHover {
+    background-color: white !important;
+    cursor: pointer;
+}
+.dataHover:hover {
+    background-color: rgba(216, 213, 213, 0.795) !important;
+}
+
+.hideCol {
+    display: none;
+}
+
+.minimise {
+    float: right;
+}
