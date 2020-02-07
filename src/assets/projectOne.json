@@ -1,0 +1,11 @@
+{
+    "Loans": {
+        "Loan": {
+            "Account": "200AMW12006000002",
+            "Group": "Alls Call Fatim(USD)",
+            "EntitlementGroup": "AR24577987-001",
+            "ProductType": "Loan",
+            "LoanCurrency": "USD"
+        }
+    }
+}

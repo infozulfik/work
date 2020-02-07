@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TreeNode } from 'primeng/api/treenode';
-import { DmtService } from 'src/app/dmt.service';
+import { DmtService } from 'src/app/dmt/service/dmt.service';
 
 @Component({
   selector: 'app-dmt-tree',
@@ -11,6 +11,7 @@ export class DmtTreeComponent implements OnInit {
   selectedNode: any;
   data: TreeNode[];
   selectedFiles: TreeNode[];
+  jsonDatas: any;
   datas: any;
   cols: any[];
 
@@ -18,45 +19,36 @@ export class DmtTreeComponent implements OnInit {
 
   ngOnInit() {
     this.data = [
-        {
-            "label": "DMT",
-            "data": "Documents Folder",
-            "expandedIcon": "fa fa-folder-open",
-            "collapsedIcon": "fa fa-folder",
-            "children": [
-              {"label": "Employees", "data": "Expenses Document"},
-              {"label": "Selected resource", "data": "Resume Document"}
-          ]
-        }
+      {
+        label: 'DMT',
+        data: 'Documents Folder',
+        expandedIcon: 'fa fa-folder-open',
+        collapsedIcon: 'fa fa-folder',
+        children: [
+          { label: 'Employees', data: 'Expenses Document' },
+          { label: 'Selected resource', data: 'Resume Document' }
+        ]
+      }
     ];
+    this.dmtService.getDatas().subscribe(data => this.jsonDatas = data);
   }
 
   getEmployee() {
-    this.dmtService.getEmpDatas().subscribe(data => {
-      this.datas = data;
-    });
-    this.dmtService.getEmpCols().subscribe(data => {
-      this.cols = data;
-    });
+    this.datas = this.jsonDatas.empDatas;
+    this.cols = this.jsonDatas.empCols;
   }
 
   getSelectedResources() {
-    this.dmtService.getSelDatas().subscribe(data => {
-      this.datas = data;
-    });
-    this.dmtService.getSelCols().subscribe(data => {
-      this.cols = data;
-    });
+    this.datas = this.jsonDatas.selDatas;
+    this.cols = this.jsonDatas.selCols;
   }
 
   nodeSelect(event) {
     this.selectedNode = event.node.label;
     if (this.selectedNode === 'Employees') {
       this.getEmployee();
-      console.log(this.cols);
     } else if (this.selectedNode === 'Selected resource') {
       this.getSelectedResources();
-      console.log(this.cols);
     }
-}
+  }
 }

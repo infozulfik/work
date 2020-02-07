@@ -9,23 +9,23 @@
        <p-card>
            <div class="ui-g">
                <div class="ui-g-3"><span>Account</span></div>
-               <div class="ui-g-9">200AVLA12006002</div>
+               <div class="ui-g-9">{{ loan?.Account }}</div>
            </div>
            <div class="ui-g">
                <div class="ui-g-3"><span>Entitlement Group </span></div>
-               <div class="ui-g-9">AR250898</div>
+               <div class="ui-g-9">{{ loan?.Group }}</div>
            </div>
            <div class="ui-g">
                <div class="ui-g-3"><span>Group</span></div>
-               <div class="ui-g-9">Allls, Call Fatlm(USD)</div>
+               <div class="ui-g-9">{{ loan?.EntitlementGroup }}</div>
            </div>
            <div class="ui-g">
                <div class="ui-g-3"><span>Product Type</span></div>
-               <div class="ui-g-9">Loan</div>
+               <div class="ui-g-9">{{ loan?.ProductType }}</div>
            </div>
            <div class="ui-g">
                <div class="ui-g-3"><span>Loan Currency</span></div>
-               <div class="ui-g-9">USD</div>
+               <div class="ui-g-9">{{ loan?.LoanCurrency }}</div>
            </div>
        </p-card>
     </p-accordionTab>

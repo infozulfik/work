@@ -21,14 +21,17 @@ import {ButtonModule} from 'primeng/button';
 import {PanelModule} from 'primeng/panel';
 import {DropdownModule} from 'primeng/dropdown';
 import {AccordionModule} from 'primeng/accordion';
+import {ChartModule} from 'primeng/chart';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DmtTreeComponent } from './dmt/dmt-tree/dmt-tree.component';
 import { from } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProjectOneUsComponent } from './project-one-us/project-one-us.component';
 import { ProjectOneBodyComponent } from './project-one-us/project-one-body/project-one-body.component';
 import { ProjectOneSearchComponent } from './project-one-us/project-one-search/project-one-search.component';
 import { LoanTabComponent } from './project-one-us/project-one-body/loan-tab/loan-tab.component';
+import { ChartsComponent } from './charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { LoanTabComponent } from './project-one-us/project-one-body/loan-tab/loa
     ProjectOneUsComponent,
     ProjectOneBodyComponent,
     ProjectOneSearchComponent,
-    LoanTabComponent
+    LoanTabComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,9 @@ import { LoanTabComponent } from './project-one-us/project-one-body/loan-tab/loa
     ButtonModule,
     PanelModule,
     AccordionModule,
-    DropdownModule
+    DropdownModule,
+    ChartModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

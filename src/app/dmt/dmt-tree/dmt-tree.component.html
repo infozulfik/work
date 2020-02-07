@@ -1,15 +1,17 @@
 <div class="ui-g">
 
-   <div class="ui-g-2">
-       <p-card styleClass="cardHeight cardRadius">
-           <section class="container-fluid" style="padding: 0px;">
-               <p-tree [value]="data" selectionMode="single" [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect($event)"></p-tree>
+    <div class="ui-g-2">
+        <p-card styleClass="cardHeight cardRadius">
+            <section class="container-fluid" style="padding: 0px;">
+                <p-tree [value]="data" selectionMode="single" [(selection)]="selectedFiles"
+                    (onNodeSelect)="nodeSelect($event)"></p-tree>
             </section>
-       </p-card>
-   </div>
-   <br/>
-   <div class="ui-g-10">
-       <app-dmt-table [selectedNode]="selectedNode" [datas]="datas" [cols]="cols" [selectedColumns]="cols"></app-dmt-table>
-   </div>
-   
+        </p-card>
+    </div>
+    <br />
+    <div class="ui-g-10">
+        <app-dmt-table [selectedNode]="selectedNode" [datas]="datas" [cols]="cols" [selectedColumns]="cols">
+        </app-dmt-table>
+    </div>
+
 </div>
