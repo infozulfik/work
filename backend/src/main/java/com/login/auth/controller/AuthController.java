@@ -1,11 +1,12 @@
 package com.login.auth.controller;
 
+import com.login.auth.model.LoginRequest;
 import com.login.auth.model.LoginResponse;
 import com.login.auth.service.AuthService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,11 +19,10 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @GetMapping("/login")
-    public ResponseEntity<LoginResponse> login(
-            @RequestParam String username,
-            @RequestParam String password) {
-        LoginResponse response = authService.authenticate(username, password);
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
+        LoginResponse response = authService.authenticate(
+                loginRequest.getUsername(), loginRequest.getPassword());
         if (response.isSuccess()) {
             return ResponseEntity.ok(response);
         }

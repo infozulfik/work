@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
@@ -22,8 +22,6 @@ export class LoginComponent {
   readonly isAuthenticated = this.authService.isAuthenticated;
   readonly errorMessage = this.authService.errorMessage;
   readonly token = this.authService.token;
-
-  readonly isFormValid = computed(() => this.loginForm.valid);
 
   onSubmit(): void {
     if (this.loginForm.invalid) {

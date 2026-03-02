@@ -41,6 +41,9 @@ yarn-error.log
 testem.log
 /typings
 
+# Java build output
+backend/target/
+
 # System Files
 .DS_Store
 Thumbs.db
