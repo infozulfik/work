@@ -4,8 +4,8 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
   "memory": "1024",
-  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskRole",
+    "executionRoleArn": "arn:aws:iam:ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam:ACCOUNT_ID:role/ecsTaskRole",
   "containerDefinitions": [
     {
       "name": "backend",
@@ -38,7 +38,7 @@
         }
       },
       "healthCheck": {
-        "command": ["CMD-SHELL", "curl -f http://localhost:8080/api/auth/login?username=health&password=check || exit 1"],
+        "command": ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || curl -sf -o /dev/null -w '%{http_code}' http://localhost:8080/api/auth/login?username=health\u0026password=check | grep -q '401\|200' || exit 1"],
         "interval": 30,
         "timeout": 5,
         "retries": 3,
