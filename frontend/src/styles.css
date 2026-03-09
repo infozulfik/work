@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles - Visual Impairment Friendly Theme */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Verdana', 'Tahoma', 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #0a0a23;
+  background: #1a1a2e;
+}
