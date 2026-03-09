@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+  build:
+    commands:
+      - echo Building backend Docker image...
+      - docker build -t login-app-backend ./backend
+      - docker tag login-app-backend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/login-app-backend:latest
+      - echo Building frontend Docker image...
+      - docker build -t login-app-frontend ./frontend
+      - docker tag login-app-frontend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/login-app-frontend:latest
+  post_build:
+    commands:
+      - echo Pushing Docker images to ECR...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/login-app-backend:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/login-app-frontend:latest
+      - echo Updating ECS service...
+      - aws ecs update-service --cluster login-app-cluster --service login-app-service --force-new-deployment

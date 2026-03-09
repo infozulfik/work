@@ -9,9 +9,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import org.springframework.http.MediaType;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(AuthController.class)
@@ -30,9 +28,9 @@ class AuthControllerTest {
         org.mockito.Mockito.when(authService.authenticate("admin", "password123"))
                 .thenReturn(successResponse);
 
-        mockMvc.perform(post("/api/auth/login")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\":\"admin\",\"password\":\"password123\"}"))
+        mockMvc.perform(get("/api/auth/login")
+                        .param("username", "admin")
+                        .param("password", "password123"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true))
                 .andExpect(jsonPath("$.message").value("Login successful"))
@@ -46,9 +44,9 @@ class AuthControllerTest {
         org.mockito.Mockito.when(authService.authenticate("wrong", "wrong"))
                 .thenReturn(failResponse);
 
-        mockMvc.perform(post("/api/auth/login")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\":\"wrong\",\"password\":\"wrong\"}"))
+        mockMvc.perform(get("/api/auth/login")
+                        .param("username", "wrong")
+                        .param("password", "wrong"))
                 .andExpect(status().isUnauthorized())
                 .andExpect(jsonPath("$.success").value(false))
                 .andExpect(jsonPath("$.message").value("Invalid username or password"))
@@ -56,10 +54,9 @@ class AuthControllerTest {
     }
 
     @Test
-    @DisplayName("Should return 400 when request body is missing")
-    void loginWithMissingBody() throws Exception {
-        mockMvc.perform(post("/api/auth/login")
-                        .contentType(MediaType.APPLICATION_JSON))
+    @DisplayName("Should return 400 when query parameters are missing")
+    void loginWithMissingParams() throws Exception {
+        mockMvc.perform(get("/api/auth/login"))
                 .andExpect(status().isBadRequest());
     }
 }
