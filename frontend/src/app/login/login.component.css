@@ -3,117 +3,147 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #000000;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  font-family: 'Verdana', 'Tahoma', 'Arial', sans-serif;
+  line-height: 1.6;
 }
 
 .login-card,
 .success-card {
-  background: white;
+  background: #ffffff;
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   text-align: center;
+  border: 3px solid #0a0a23;
 }
 
 h1 {
   margin: 0 0 1.5rem 0;
-  color: #333;
-  font-size: 1.8rem;
+  color: #0a0a23;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
   text-align: left;
 }
 
 label {
   display: block;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-  color: #555;
-  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #0a0a23;
+  font-size: 1.1rem;
 }
 
 input {
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #e0e0e0;
+  padding: 0.9rem;
+  border: 3px solid #333333;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  font-size: 1.15rem;
+  font-family: 'Verdana', 'Tahoma', 'Arial', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
   box-sizing: border-box;
+  color: #0a0a23;
+  background: #fafafa;
 }
 
 input:focus {
-  outline: none;
-  border-color: #667eea;
+  outline: 3px solid #0056b3;
+  outline-offset: 2px;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.25);
+}
+
+input::placeholder {
+  color: #666666;
+  font-size: 1rem;
 }
 
 .error-hint {
-  color: #e74c3c;
-  font-size: 0.8rem;
-  margin-top: 0.25rem;
+  color: #d32f2f;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
   display: block;
 }
 
 .error-message {
-  background: #ffeaea;
-  color: #e74c3c;
-  padding: 0.75rem;
+  background: #fce4e4;
+  color: #b71c1c;
+  padding: 0.9rem;
   border-radius: 8px;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid #d32f2f;
 }
 
 button {
   width: 100%;
-  padding: 0.85rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
+  padding: 1rem;
+  background: #0056b3;
+  color: #ffffff;
+  border: 3px solid #003d80;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Verdana', 'Tahoma', 'Arial', sans-serif;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  letter-spacing: 0.03em;
 }
 
 button:hover:not(:disabled) {
-  opacity: 0.9;
+  background: #003d80;
+  box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.3);
+}
+
+button:focus {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
 }
 
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background: #6c757d;
+  border-color: #495057;
 }
 
 .hint {
-  margin-top: 1rem;
-  color: #999;
-  font-size: 0.85rem;
+  margin-top: 1.2rem;
+  color: #444444;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* Success state */
 .success-icon {
-  width: 60px;
-  height: 60px;
-  background: #27ae60;
-  color: white;
+  width: 70px;
+  height: 70px;
+  background: #1b7a3d;
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 1rem auto;
+  font-size: 2.4rem;
+  margin: 0 auto 1.2rem auto;
+  border: 3px solid #0d5c2a;
 }
 
 .welcome-message {
-  color: #555;
-  font-size: 1.1rem;
+  color: #0a0a23;
+  font-size: 1.25rem;
   margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .token-section {
@@ -122,27 +152,36 @@ button:disabled {
 }
 
 .token-section h3 {
-  color: #333;
+  color: #0a0a23;
   margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .token-display {
   display: block;
-  background: #f5f5f5;
-  padding: 0.75rem;
+  background: #f0f0f0;
+  padding: 0.9rem;
   border-radius: 8px;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   word-break: break-all;
-  color: #667eea;
-  border: 1px solid #e0e0e0;
+  color: #0a0a23;
+  border: 2px solid #333333;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
 }
 
 .logout-btn {
-  background: #e74c3c;
+  background: #c62828;
+  border-color: #8e0000;
   margin-top: 0.5rem;
 }
 
 .logout-btn:hover {
-  opacity: 0.9;
+  background: #8e0000;
+}
+
+.logout-btn:focus {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
 }
