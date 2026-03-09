@@ -9,5 +9,5 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENV JWT_SECRET=my-super-secret-key-for-jwt-token-generation-minimum-256-bits
+ENV JWT_SECRET=
 ENTRYPOINT ["java", "-jar", "app.jar"]
